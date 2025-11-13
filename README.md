@@ -1,19 +1,44 @@
-# FHEVM React Template
+# FHEFutureLove
 
-A minimal React frontend template for building FHEVM-enabled decentralized applications (dApps). This template provides a simple development interface for interacting with FHEVM smart contracts, specifically the `FHECounter.sol` contract.
+FHEFutureLove is a fun and interactive React dApp that predicts your “future love” using **Fully Homomorphic Encryption (FHE)** on the FHEVM blockchain. Users answer a few preference questions, save them encrypted on-chain, and later decrypt to reveal a randomized avatar representing their soulmate.
 
-## 🚀 What is FHEVM?
+---
 
-FHEVM (Fully Homomorphic Encryption Virtual Machine) enables computation on encrypted data directly on Ethereum. This template demonstrates how to build dApps that can perform computations while keeping data private.
+## Features
 
-## ✨ Features
+- 🔒 **Privacy-first**: All user preferences are encrypted before being saved on-chain.
+- 🎨 **Avatar Generation**: Generates a unique avatar based on your preferences using DiceBear Avataaars.
+- 💖 **Future Love Prediction**: Randomized yet deterministic avatars reveal your “future love” without exposing raw data.
+- 🔗 **Wallet Integration**: Supports MetaMask and other Ethereum-compatible wallets via RainbowKit.
+- ⚡ **Responsive UI**: Animated interface using Framer Motion and TailwindCSS.
 
-- **🔐 FHEVM Integration**: Built-in support for fully homomorphic encryption
-- **⚛️ React + Next.js**: Modern, performant frontend framework
-- **🎨 Tailwind CSS**: Utility-first styling for rapid UI development
-- **🔗 RainbowKit**: Seamless wallet connection and management
-- **🌐 Multi-Network Support**: Works on both Sepolia testnet and local Hardhat node
-- **📦 Monorepo Structure**: Organized packages for SDK, contracts, and frontend
+---
+
+## User Interface
+
+The UI is designed to be **simple, fun, and responsive**:
+
+1. **Landing / Wallet Connection**  
+   - When the app loads, users see a welcoming screen prompting them to connect their wallet.  
+   - Animated title and heart icons create a playful atmosphere.  
+
+2. **Preferences Form**  
+   - After connecting, users fill in **gender, age, height, and weight**.  
+   - Form inputs are styled with **rounded borders, shadows, and focus rings** for a polished look.  
+   - Submit button is animated with gradient and hover effects for engaging interaction.  
+
+3. **Decryption / Avatar Reveal**  
+   - If the user has already saved preferences, they see a **Decrypt** button instead of the form.  
+   - On decryption, a **large, centered avatar** is displayed with smooth spring animations.  
+   - UI supports **backdrop blur** and semi-transparent cards for modern aesthetics.  
+
+4. **Messages / Feedback**  
+   - Status messages like “Generating & Saving...” or “Decrypting...” are shown below the buttons.  
+   - Animations and color highlights help users track app progress intuitively.  
+
+Overall, the design combines **fun, playful visuals** with **modern dApp UI patterns**, keeping it intuitive for users of all ages.
+
+---
 
 ## 📋 Prerequinextjss
 
@@ -124,7 +149,7 @@ For more details, see the [MetaMask development guide](https://docs.metamask.io/
 This template uses a monorepo structure with three main packages:
 
 ```
-fhevm-react-template/
+future-love/
 ├── packages/
 │   ├── fhevm-hardhat-template/    # Smart contracts & deployment
 │   ├── fhevm-sdk/                 # FHEVM SDK package
@@ -134,8 +159,8 @@ fhevm-react-template/
 
 ### Key Components
 
-#### 🔗 FHEVM Integration (`packages/nextjs/hooks/fhecounter-example/`)
-- **`useFHECounterWagmi.tsx`**: Example hook demonstrating FHEVM contract interaction
+#### 🔗 FHEVM Integration (`packages/nextjs/hooks/`)
+- **`useFHEFutureLove.tsx`**: Example hook demonstrating FHEVM contract interaction
 - Essential hooks for FHEVM-enabled smart contract communication
 - Easily copyable to any FHEVM + React project
 
