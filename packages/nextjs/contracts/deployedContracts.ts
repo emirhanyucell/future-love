@@ -7,155 +7,82 @@ import { GenericContractsDeclaration } from "~~/utils/helper/contract";
 const deployedContracts = {
   11155111: {
     FHEFutureLove: {
-      address: "0xC1CFD52613BF17260a80a5603836EAc9ad8e7340",
+      address: "0x204D135AAED749f1C89d25f224C378fd492757A8",
       abi: [
         {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "user",
-              "type": "address"
-            }
-          ],
-          "name": "getEncryptedSequence",
-          "outputs": [
-            {
-              "internalType": "euint32",
-              "name": "",
-              "type": "bytes32"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
+          inputs: [],
+          name: "ZamaProtocolUnsupported",
+          type: "error",
         },
         {
-          "inputs": [
+          inputs: [],
+          name: "confidentialProtocolId",
+          outputs: [
             {
-              "internalType": "address",
-              "name": "user",
-              "type": "address"
-            }
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
           ],
-          "name": "isRegistered",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
+          stateMutability: "view",
+          type: "function",
         },
         {
-          "inputs": [],
-          "name": "protocolId",
-          "outputs": [
+          inputs: [
             {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
-            }
+              internalType: "address",
+              name: "user",
+              type: "address",
+            },
           ],
-          "stateMutability": "pure",
-          "type": "function"
+          name: "getEncryptedSequence",
+          outputs: [
+            {
+              internalType: "euint32",
+              name: "",
+              type: "bytes32",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
         },
         {
-          "inputs": [
+          inputs: [
             {
-              "internalType": "externalEuint32",
-              "name": "sequenceEncrypted",
-              "type": "bytes32"
+              internalType: "address",
+              name: "user",
+              type: "address",
+            },
+          ],
+          name: "isRegistered",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "externalEuint32",
+              name: "sequenceEncrypted",
+              type: "bytes32",
             },
             {
-              "internalType": "bytes",
-              "name": "proof",
-              "type": "bytes"
-            }
-          ],
-          "name": "registerSequence",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        }
-      ],
-      inheritedFunctions: {},
-      deployedOnBlock: 9368216,
-    },
-  },
-  31337: {
-    FHEFutureLove: {
-      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      abi: [
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "user",
-              "type": "address"
-            }
-          ],
-          "name": "getEncryptedSequence",
-          "outputs": [
-            {
-              "internalType": "euint32",
-              "name": "",
-              "type": "bytes32"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "user",
-              "type": "address"
-            }
-          ],
-          "name": "isRegistered",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [],
-          "name": "protocolId",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
-            }
-          ],
-          "stateMutability": "pure",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "externalEuint32",
-              "name": "sequenceEncrypted",
-              "type": "bytes32"
+              internalType: "bytes",
+              name: "proof",
+              type: "bytes",
             },
-            {
-              "internalType": "bytes",
-              "name": "proof",
-              "type": "bytes"
-            }
           ],
-          "name": "registerSequence",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        }
+          name: "registerSequence",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
       ],
       inheritedFunctions: {},
       deployedOnBlock: 9368216,

@@ -23,12 +23,16 @@ import type {
 export interface FHEFutureLoveInterface extends Interface {
   getFunction(
     nameOrSignature:
+      | "confidentialProtocolId"
       | "getEncryptedSequence"
       | "isRegistered"
-      | "protocolId"
       | "registerSequence"
   ): FunctionFragment;
 
+  encodeFunctionData(
+    functionFragment: "confidentialProtocolId",
+    values?: undefined
+  ): string;
   encodeFunctionData(
     functionFragment: "getEncryptedSequence",
     values: [AddressLike]
@@ -36,10 +40,6 @@ export interface FHEFutureLoveInterface extends Interface {
   encodeFunctionData(
     functionFragment: "isRegistered",
     values: [AddressLike]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "protocolId",
-    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "registerSequence",
@@ -47,6 +47,10 @@ export interface FHEFutureLoveInterface extends Interface {
   ): string;
 
   decodeFunctionResult(
+    functionFragment: "confidentialProtocolId",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "getEncryptedSequence",
     data: BytesLike
   ): Result;
@@ -54,7 +58,6 @@ export interface FHEFutureLoveInterface extends Interface {
     functionFragment: "isRegistered",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "protocolId", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "registerSequence",
     data: BytesLike
@@ -104,6 +107,8 @@ export interface FHEFutureLove extends BaseContract {
     event?: TCEvent
   ): Promise<this>;
 
+  confidentialProtocolId: TypedContractMethod<[], [bigint], "view">;
+
   getEncryptedSequence: TypedContractMethod<
     [user: AddressLike],
     [string],
@@ -111,8 +116,6 @@ export interface FHEFutureLove extends BaseContract {
   >;
 
   isRegistered: TypedContractMethod<[user: AddressLike], [boolean], "view">;
-
-  protocolId: TypedContractMethod<[], [bigint], "view">;
 
   registerSequence: TypedContractMethod<
     [sequenceEncrypted: BytesLike, proof: BytesLike],
@@ -125,14 +128,14 @@ export interface FHEFutureLove extends BaseContract {
   ): T;
 
   getFunction(
+    nameOrSignature: "confidentialProtocolId"
+  ): TypedContractMethod<[], [bigint], "view">;
+  getFunction(
     nameOrSignature: "getEncryptedSequence"
   ): TypedContractMethod<[user: AddressLike], [string], "view">;
   getFunction(
     nameOrSignature: "isRegistered"
   ): TypedContractMethod<[user: AddressLike], [boolean], "view">;
-  getFunction(
-    nameOrSignature: "protocolId"
-  ): TypedContractMethod<[], [bigint], "view">;
   getFunction(
     nameOrSignature: "registerSequence"
   ): TypedContractMethod<
